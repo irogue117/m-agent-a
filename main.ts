@@ -16,9 +16,9 @@ const mistral = new Mistral({
   apiKey: Deno.env.get("MISTRAL_API_KEY"),
 });
 
-const coding_orchestrator_agentID = "ag_019d918a71bd765a85c5c94da7dd8650";
-const coding_developer_agentID = "ag_019d918b2eb674d19e8965331dda422a";
-const coding_validator_agentID = "ag_019d919841c675ec935b867066bad2e3";
+const coding_orchestrator_agentID = Deno.env.get("coding_orch_ID");
+const coding_developer_agentID = Deno.env.get("coding_dev_ID");
+const coding_validator_agentID = Deno.env.get("coding_val_ID");
 
 // Convert the mistral SDK internal FunctionT (which is nicer for us to define)
 // to the actual object we need to give to the SDK.
