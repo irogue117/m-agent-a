@@ -1,9 +1,7 @@
 import { Mistral } from "@mistralai/mistralai";
 import dotenv from "dotenv";
 import {
-  ConversationAppendRequest,
   ConversationInputs,
-  ConversationRequest,
   ConversationResponse,
   FunctionT,
   FunctionTool,
@@ -21,7 +19,7 @@ const coding_developer_agentID = Deno.env.get("coding_dev_ID");
 const coding_validator_agentID = Deno.env.get("coding_val_ID");
 
 // Convert the mistral SDK internal FunctionT (which is nicer for us to define)
-// to the actual object we need to give to the SDK.
+// to the actual object we need to give to the SDK when we create conversations.
 const fnTool = (fn: FunctionT): FunctionTool => ({
   type: "function",
   function: fn,
